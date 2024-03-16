@@ -3,6 +3,14 @@
 This is the official PyTorch implementation of the paper **RetFormer: Embracing Point Cloud Transformer with Retentive Network**, by Gopi Krishna Erabati and Helder Araujo.
 
 **Contents**
+1. [Overview](https://github.com/gopi-erabati/RetFormer#overview)
+2. [Results](https://github.com/gopi-erabati/RetFormer#results)
+3. [Requirements, Installation and Usage](https://github.com/gopi-erabati/RetFormer#requirements-installation-and-usage)
+    1. [Prerequistes](https://github.com/gopi-erabati/RetFormer#prerequisites)
+    2. [Installation](https://github.com/gopi-erabati/RetFormer#installation)
+    3. [Training](https://github.com/gopi-erabati/RetFormer#training)
+    4. [Testing](https://github.com/gopi-erabati/RetFormer#testing)
+4. [Acknowlegements](https://github.com/gopi-erabati/RetFormer#acknowlegements)
 
 ## Overview
 Point Cloud Transformers (PCTs) have gained lot of attention not only on the indoor data but also on the large-scale outdoor 3D point clouds, such as in autonomous driving. However, the vanilla self-attention mechanism in PCTs does not include any explicit prior spatial information about the quantized voxels (or pillars). Recently, Retentive Network has gained attention in the natural language processing (NLP) domain due to its efficient modelling capability and remarkable performance, leveraged by the introduction of explicit decay mechanism which incorporates the distance related spatial prior knowledge into the model. As the NLP tasks are causal and one-dimensional in nature, the explicit decay is designed to be unidirectional and one-dimensional. However, the pillars in the Bird's Eye View (BEV) space are two-dimensional without causal properties. In this work, we propose **RetFormer** model by introducing bidirectional and two-dimensional decay mechanism for pillars in PCT and design the novel Multi-Scale Retentive Self-Attention (MSReSA) module. The introduction of explicit bidirectional and two-dimensional decay incorporates the 2D spatial distance related prior information of pillars into the PCT which significantly improves the modelling capacity of RetFormer. We evaluate our method on large-scale Waymo and KITTI datasets. RetFormer not only achieves significant performance gain over of 2.4 mAP and 0.9 mAP over PCT-based SST and FlatFormer respectively, and 2.7 mAP over sparse convolutional-based CenterPoint on Waymo Open Dataset, but also is efficient with **3.2x** speedup over SST and runs in real-time at ~69 FPS on a RTX 4090 GPU.
@@ -15,14 +23,14 @@ Point Cloud Transformers (PCTs) have gained lot of attention not only on the ind
 
 | Config | Veh. L1 AP/APH | Veh. L2 AP/APH | Ped. L1 AP/APH | Ped. L2 AP/APH | Cyc. L1 AP/APH | Cyc. L2 AP/APH | Latency (ms) |
 | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  |
-| RetFormer-1f | 76.3/75.8 | 68.0/67.6 | 81.5/72.9 | 74.7/66.6 | 71.8/70.4 | 69.1/67.8 | 14.5 |
-| RetFormer-2f | 77.8/77.3 | 69.7/69.3 | 82.5/77.6 | 76.1/71.5 | 74.6/73.6 | 72.3/71.3 | 15.9 | 
+| [RetFormer-waymo-1f](configs/retformer_waymo_D1_2x_3class.py) | 76.3/75.8 | 68.0/67.6 | 81.5/72.9 | 74.7/66.6 | 71.8/70.4 | 69.1/67.8 | 14.5 |
+| [RetFormer-waymo-2f](configs/retformer_waymo_D1_2x_3class_2f.py) | 77.8/77.3 | 69.7/69.3 | 82.5/77.6 | 76.1/71.5 | 74.6/73.6 | 72.3/71.3 | 15.9 | 
 
 We can not distribute the model weights on Waymo dataset due to the [Waymo license terms](https://waymo.com/open/terms).
 
 | Config | Ped. easy | Ped. mod. | Ped. hard | Cyc. easy | Cyc. mod. | Cyc. hard | 
 | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  |
-| RetFormer | 74.0 | 70.3 | 66.0 | 84.5 | 64.8 | 62.0 |
+| [RetFormer-kitti](configs/retformer_kitti_3class.py) | 74.0 | 70.3 | 66.0 | 84.5 | 64.8 | 62.0 |
 
 ## Requirements, Installation and Usage
 

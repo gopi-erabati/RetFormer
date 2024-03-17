@@ -28,9 +28,9 @@ Point Cloud Transformers (PCTs) have gained lot of attention not only on the ind
 
 We can not distribute the model weights on Waymo dataset due to the [Waymo license terms](https://waymo.com/open/terms).
 
-| Config | Ped. easy | Ped. mod. | Ped. hard | Cyc. easy | Cyc. mod. | Cyc. hard | 
-| :---:  | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  |
-| [RetFormer-kitti](configs/retformer_kitti_3class.py) | 74.0 | 70.3 | 66.0 | 84.5 | 64.8 | 62.0 |
+| Config | Ped. easy | Ped. mod. | Ped. hard | Cyc. easy | Cyc. mod. | Cyc. hard | |
+| :---:  | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  |
+| [RetFormer-kitti](configs/retformer_kitti_3class.py) | 74.0 | 70.3 | 66.0 | 84.5 | 64.8 | 62.0 | [model](https://drive.google.com/file/d/1Ludrfmd4Dsn_5uxmm9cGFE9uW5ZyehLQ/view?usp=sharing) | 
 
 ## Requirements, Installation and Usage
 
@@ -48,7 +48,7 @@ The code is tested on the following configuration:
 
 ### Installation
 
-### Clone the repository
+**Clone the repository**
 ```
 git clone https://github.com/gopi-erabati/RetFormer.git
 cd RetFormer

@@ -2,6 +2,8 @@
 
 This is the official PyTorch implementation of the paper **RetFormer: Embracing Point Cloud Transformer with Retentive Network**, by Gopi Krishna Erabati and Helder Araujo.
 
+G. K. Erabati and H. Araujo, "RetFormer: Embracing Point Cloud Transformer With Retentive Network," in _IEEE Transactions on Intelligent Vehicles_, 2024, doi: [10.1109/TIV.2024.3417260](https://doi.org/10.1109/TIV.2024.3417260)
+
 **Contents**
 1. [Overview](https://github.com/gopi-erabati/RetFormer#overview)
 2. [Results](https://github.com/gopi-erabati/RetFormer#results)
@@ -11,6 +13,7 @@ This is the official PyTorch implementation of the paper **RetFormer: Embracing 
     3. [Training](https://github.com/gopi-erabati/RetFormer#training)
     4. [Testing](https://github.com/gopi-erabati/RetFormer#testing)
 4. [Acknowlegements](https://github.com/gopi-erabati/RetFormer#acknowlegements)
+5. [Reference](https://github.com/gopi-erabati/RetFormer#reference)
 
 ## Overview
 Point Cloud Transformers (PCTs) have gained lot of attention not only on the indoor data but also on the large-scale outdoor 3D point clouds, such as in autonomous driving. However, the vanilla self-attention mechanism in PCTs does not include any explicit prior spatial information about the quantized voxels (or pillars). Recently, Retentive Network has gained attention in the natural language processing (NLP) domain due to its efficient modelling capability and remarkable performance, leveraged by the introduction of explicit decay mechanism which incorporates the distance related spatial prior knowledge into the model. As the NLP tasks are causal and one-dimensional in nature, the explicit decay is designed to be unidirectional and one-dimensional. However, the pillars in the Bird's Eye View (BEV) space are two-dimensional without causal properties. In this work, we propose **RetFormer** model by introducing bidirectional and two-dimensional decay mechanism for pillars in PCT and design the novel Multi-Scale Retentive Self-Attention (MSReSA) module. The introduction of explicit bidirectional and two-dimensional decay incorporates the 2D spatial distance related prior information of pillars into the PCT which significantly improves the modelling capacity of RetFormer. We evaluate our method on large-scale Waymo and KITTI datasets. RetFormer not only achieves significant performance gain over of 2.4 mAP and 0.9 mAP over PCT-based SST and FlatFormer respectively, and 2.7 mAP over sparse convolutional-based CenterPoint on Waymo Open Dataset, but also is efficient with **3.2x** speedup over SST and runs in real-time at ~69 FPS on a RTX 4090 GPU.
@@ -123,3 +126,17 @@ Follow [MMDetection3D-1.0.0.rc6](https://github.com/open-mmlab/mmdetection3d/tre
 ## Acknowlegements
 We sincerely thank the contributors for their open-source code: [MMDetection3D](https://github.com/open-mmlab/mmdetection3d), [FlatFormer](https://github.com/mit-han-lab/flatformer).
 
+## Reference
+```
+@ARTICLE{retformerGopi,
+  author={Erabati, Gopi Krishna and Araujo, Helder},
+  journal={IEEE Transactions on Intelligent Vehicles}, 
+  title={RetFormer: Embracing Point Cloud Transformer With Retentive Network}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-12},
+  keywords={Point cloud compression;Transformers;Three-dimensional displays;Task analysis;Feature extraction;Computational modeling;Object detection;Point cloud transformer;retention;LiDAR;3D object detection;autonomous driving},
+  doi={10.1109/TIV.2024.3417260}}
+
+```

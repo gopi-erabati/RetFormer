@@ -2,7 +2,7 @@
 
 This is the official PyTorch implementation of the paper **RetFormer: Embracing Point Cloud Transformer with Retentive Network**, by Gopi Krishna Erabati and Helder Araujo.
 
-G. K. Erabati and H. Araujo, "RetFormer: Embracing Point Cloud Transformer With Retentive Network," in _IEEE Transactions on Intelligent Vehicles_, 2024, doi: [10.1109/TIV.2024.3417260](https://doi.org/10.1109/TIV.2024.3417260)
+G. K. Erabati and H. Araujo, "RetFormer: Embracing Point Cloud Transformer With Retentive Network," in _IEEE Transactions on Intelligent Vehicles_, 2024. (IEEE T-IV, IF=14 (2023)) doi: [10.1109/TIV.2024.3417260](https://doi.org/10.1109/TIV.2024.3417260)
 
 **Contents**
 1. [Overview](https://github.com/gopi-erabati/RetFormer#overview)
@@ -21,8 +21,7 @@ Point Cloud Transformers (PCTs) have gained lot of attention not only on the ind
 ## Results
 
 ### Predictions on Waymo dataset
-
-![RetFormer_-Embracing-Point-Cloud-Transformer-with-Retentive-Network-_online-video-cutter com_](https://github.com/gopi-erabati/RetFormer/assets/22390149/f227b1e5-abc1-4acb-97c0-0ca5a477ef91)
+![1719764342896-ezgif com-optimize](https://github.com/user-attachments/assets/068992c2-844f-49a4-8d80-1dc00ca6b265)
 
 | Config | Veh. L1 AP/APH | Veh. L2 AP/APH | Ped. L1 AP/APH | Ped. L2 AP/APH | Cyc. L1 AP/APH | Cyc. L2 AP/APH | Latency (ms) |
 | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  | :---:  |
